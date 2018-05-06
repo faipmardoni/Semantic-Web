@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="javascript web programming html css semantic" />
+  <meta name="description" content="All about programming related to javascript" />
+  <meta name="author" content="Faip Mardoni" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <title>Semantic Web</title>
+  <style>
+    body {
+      font: 20px "Montserrat", sans-serif;
+      line-height: 1.8;
+    }
+
+    .margin {
+      margin-bottom: 45px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    .bg-content {
+      background-color: #ffffff;
+      color: #555555
+    }
+
+    .bg-1 {
+      background-color: #1abc9c;
+      color: #ffffff;
+    }
+
+    .bg-2 {
+      background-color: #474e5d;
+      color: #ffffff;
+      padding-bottom: 10px
+    }
+
+    .bg-3 {
+      background-color: #2f2f2f;
+      color: #ffffff;
+      margin-top: 15px;
+    }
+
+    .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+
+    .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+    }
+
+    .navbar-nav li a:hover {
+      color: #1abc9c !important;
+    }
+
+    #loader {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1;
+      width: 150px;
+      height: 150px;
+      margin: -75px 0 0 -75px;
+      border: 16px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid #3498db;
+      width: 120px;
+      height: 120px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .animate-bottom {
+      position: relative;
+      -webkit-animation-name: animatebottom;
+      -webkit-animation-duration: 1s;
+      animation-name: animatebottom;
+      animation-duration: 1s
+    }
+
+    @-webkit-keyframes animatebottom {
+      from {
+        bottom: -100px;
+        opacity: 0
+      }
+      to {
+        bottom: 0px;
+        opacity: 1
+      }
+    }
+
+    @keyframes animatebottom {
+      from {
+        bottom: -100px;
+        opacity: 0
+      }
+      to {
+        bottom: 0;
+        opacity: 1
+      }
+    }
+
+    #myBtn {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      border: none;
+      outline: none;
+      background-color: red;
+      color: white;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+
+    #myBtn:hover {
+      background-color: #555;
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 100%;
+      margin: auto;
+      text-align: center;
+    }
+
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+
+    #contact {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    a {
+      text-decoration: none;
+      font-size: 22px;
+      color: black;
+    }
+
+    button:hover,
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .img-thumbnail {
+      width: 100%
+    }
+  </style>
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50" onload="myFunction()">
+  <div id="loader"></div>
+  <div style="display:none;" id="myDiv" class="animate-bottom">
+    <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">All About Programming</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#about">About Me</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container bg-content">
+      <div class="page-header">
+        <h1 class="h1">Semantic Web</h1>
+      </div>
+      <p>The
+        <strong>Semantic Web</strong> is an extension of the World Wide Web through standards by the
+        <strong>Wide Web Consortium (W3C)</strong>. The standards promote common data formats and exchange protocols on the Web,
+        most fundamentally the Resource Description Framework (RDF). According to the W3C, "The Semantic Web provides a common
+        framework that allows data to be shared and reused across application, enterprise, and community boundaries". The
+        Semantic Web is therefore regarded as an integrator across different content, information applications and systems.</p>
+      ​
+      <div class="text-center img-content">
+        <figure class="figure">
+          <img src="https://i2.wp.com/learning.maxtech4u.com/wp-content/uploads/2017/11/Semantic-Web-Structure.png" alt="Semantic Web Structure"
+            class="figure-img img-fluid rounded mx-auto d-block">
+          <figcaption class="figure-caption text-center">Semantic Web Structure</figcaption>
+        </figure>
+      </div>
+
+      <p>The term was coined by Tim Berners-Lee for a web of data (or data web) that can be processed by machines[4]—that is,
+        one in which much of the meaning is machine-readable. While its critics have questioned its feasibility, proponents
+        argue that applications in industry, biology and human sciences research have already proven the validity of the
+        original concept.
+      </p>
+
+      <p>Berners-Lee originally expressed his vision of the Semantic Web as follows:</p>
+      <blockquote class="blockquote">
+        <p class="mb-0">I have a dream for the Web [in which computers] become capable of analyzing all the data on the Web – the content,
+          links, and transactions between people and computers. A "Semantic Web", which makes this possible, has yet to emerge,
+          but when it does, the day-to-day mechanisms of trade, bureaucracy and our daily lives will be handled by machines
+          talking to machines. The "intelligent agents" people have touted for ages will finally materialize.</p>
+      </blockquote>
+
+      <p>The 2001 Scientific American article by Berners-Lee, Hendler, and Lassila described an expected evolution of the existing
+        Web to a Semantic Web. In 2006, Berners-Lee and colleagues stated that: "This simple idea…remains largely unrealized".
+        In 2013, more than four million Web domains contained Semantic Web markup. Source:
+        <a href="https://en.wikipedia.org/wiki/Semantic_Web" target="_blank">Wikipedia</a>
+      </p>
+    </div>
+    <div class="container text-center" id="about">
+      <h2>About Me</h2>
+      <div class="card">
+        <img src="https://avatars0.githubusercontent.com/u/12030046?s=460&v=4" alt="Faip Mardoni" class="img-responsive img-circle"
+          style="display: inline; width: 20%">
+        <h3>FAIP MARDONI</h3>
+        <p class="title">Student at</p>
+        <p>Hacktiv8 Indonesia</p>
+        <a href="faipmardoni.github.io">
+          <i class="fa fa-dribbble"></i>
+        </a>
+        <a href="https://twitter.com/Faip_Mardoni">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/faip-mardoni-0754615b/">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="https://www.facebook.com/FM050394">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <p>
+          <button id="contact">Contact</button>
+        </p>
+      </div>
+    </div>
+    <div class="container bg-2" id="where">
+      <h3 class="">Related Post</h3>
+      <div class="row">
+        <div class="col-sm-4">
+          <a href="#">
+            <img src="https://lh3.googleusercontent.com/JuzdAHaAtk1SverizQQXAqGbQJ7NFPtiGlmjEl_Lqh7-9yc3qqs4njGK82Se_pL2kcQ=w300" alt="wolf"
+              class="img-responsive img-thumbnail">
+          </a>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, saepe quia debitis cum veritatis ullam quaerat
+            nesciunt labore consectetur magnam ipsum, placeat mollitia totam architecto hic est voluptatibus reprehenderit
+            quos?
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <a href="#">
+            <img src="https://www.hunchmanifest.com/wp-content/uploads/2013/06/highres_2820368221-300x300.jpeg" alt="wolf" class="img-responsive img-thumbnail">
+          </a>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, saepe quia debitis cum veritatis ullam quaerat
+            nesciunt labore consectetur magnam ipsum, placeat mollitia totam architecto hic est voluptatibus reprehenderit
+            quos?
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <a href="#">
+            <img src="https://semantic-web.com/wp-content/uploads/2015/06/vectorstock_4550983-300x300.jpg" alt="wolf" class="img-responsive img-thumbnail">
+          </a>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio, saepe quia debitis cum veritatis ullam quaerat
+            nesciunt labore consectetur magnam ipsum, placeat mollitia totam architecto hic est voluptatibus reprehenderit
+            quos?
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer class="container bg-3 text-center">
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+      <p>Designed by Faip Mardoni</p>
+    </footer>
+  </div>
+  <script>
+    function myFunction() {
+      let myVar = setTimeout(showPage, 2000);
+    }
+
+    function showPage() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("myDiv").style.display = "block";
+    }
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+
+</html>
